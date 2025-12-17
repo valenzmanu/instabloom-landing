@@ -46,6 +46,17 @@
             scroll-behavior: smooth
         }
 
+        /* BoothPics embed responsive styling */
+        #boothpics-embed-container {
+            width: 100%;
+        }
+
+        #boothpics-embed-container iframe {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
         /* small helpers when Tailwind needs an extra touch */
     </style>
 
@@ -101,8 +112,7 @@
             <!-- TODO: replace with optimized web version if needed -->
             <img src="assets/header_photo.JPG" alt="InstaBloom - header"
                 class="absolute inset-0 w-full h-full object-cover brightness-75" />
-            <div
-                class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/40">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/40">
             </div>
 
             <div class="relative z-10 max-w-2xl mx-auto text-center px-6 py-28">
@@ -125,29 +135,11 @@
         </section>
 
         <!-- Gallery / Experience -->
-        <section id="galeria" class="py-12 bg-[color:var(--cream)]">
-            <div class="max-w-3xl mx-auto px-4">
-                <h2 class="text-center text-2xl font-bold mb-4">Creamos experiencias inolvidables</h2>
-                <p class="text-center text-sm text-gray-600 mb-6">Para bodas, graduaciones, despedidas de soltera, baby showers, cumpleaños y eventos
-                    corporativos.</p>
-
-                <!-- Grid of placeholders -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <!-- TODO: replace images with real photos -->
-                    <img src="https://picsum.photos/seed/ib1/600/600" alt="Placeholder"
-                        class="w-full h-40 object-cover rounded-lg" />
-                    <img src="https://picsum.photos/seed/ib2/600/600" alt="Placeholder"
-                        class="w-full h-40 object-cover rounded-lg" />
-                    <img src="https://picsum.photos/seed/ib3/600/600" alt="Placeholder"
-                        class="w-full h-40 object-cover rounded-lg" />
-                    <img src="https://picsum.photos/seed/ib4/600/600" alt="Placeholder"
-                        class="w-full h-40 object-cover rounded-lg" />
-                    <img src="https://picsum.photos/seed/ib5/600/600" alt="Placeholder"
-                        class="w-full h-40 object-cover rounded-lg" />
-                    <img src="https://picsum.photos/seed/ib6/600/600" alt="Placeholder"
-                        class="w-full h-40 object-cover rounded-lg" />
-                </div>
-            </div>
+        <section id="galeria" class="bg-[color:var(--cream)]">
+            <!-- Start Portfolio embed code -->
+            <div id="boothpics-embed-container" class="w-full"></div>
+            <script id="boothpics-embed" src="https://salsa.boothpics.com/fiesta-embed-portfolio.js?key=00f6b0e6-4c33-5109-87c7-54e3d4ecef71" async defer></script>
+            <!-- End Portfolio embed code -->
         </section>
 
         <!-- Servicios / Paquetes -->
@@ -159,15 +151,16 @@
 
                 <div class="grid gap-6 sm:grid-cols-3 items-start">
                     <!-- The Flower Wall Experience -->
-                    <div class="rounded-lg p-6 bg-white shadow-lg hover:shadow-xl transition-shadow h-full border-2 border-gray-200">
+                    <div
+                        class="rounded-lg p-6 bg-white shadow-lg hover:shadow-xl transition-shadow h-full border-2 border-gray-200">
                         <h3 class="text-lg font-semibold text-[color:var(--brand-red)]">The Flower Wall Experience</h3>
-                        <p class="text-sm text-gray-600 mt-1">Backdrops premium para fotos inolvidables.</p>
+                        <p class="text-sm text-gray-600 mt-1">Un spot increíble para tus fotografías.</p>
                         <p class="text-sm font-semibold text-[color:var(--brand-red)] mt-3">Desde Q1,500</p>
                         <ul class="text-sm text-gray-600 mt-3 space-y-2">
-                            <li>• Flower Wall de 2.40×2.40 m (blanca o rosada)</li>
-                            <li>• Signo neón incluido</li>
-                            <li>• Hasta 3 horas de servicio</li>
-                            <li>• Montaje y desmontaje incluido</li>
+                            <li>• Flower-wall en color a elección.</li>
+                            <li>• Signo neón con frase acorde a la celebración.</li>
+                            <li>• Hasta 3 horas de servicio.</li>
+                            <li>• Montaje y desmontaje incluido.</li>
                         </ul>
                         <div class="mt-6 text-center">
                             <a href="https://wa.me/50242911090?text=Hola%20InstaBloom%2C%20quiero%20informaci%C3%B3n%20del%20paquete%20The%20Flower%20Wall%20Experience"
@@ -178,13 +171,17 @@
                     </div>
 
                     <!-- The InstaBloom Experience (Highlighted - Center) -->
-                    <div class="rounded-xl p-7 bg-white shadow-2xl border-2 border-[color:var(--brand-pink)] transform scale-105 relative sm:order-first lg:order-none hover:shadow-2xl transition-shadow">
+                    <div
+                        class="rounded-xl p-7 bg-white shadow-2xl border-2 border-[color:var(--brand-pink)] transform scale-105 relative sm:order-first lg:order-none hover:shadow-2xl transition-shadow">
                         <!-- Badge Más solicitado -->
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                            <span class="inline-block bg-[color:var(--brand-red)] text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md">⭐ Más solicitado</span>
+                            <span
+                                class="inline-block bg-[color:var(--brand-red)] text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md">⭐
+                                Más solicitado</span>
                         </div>
                         <div class="mt-2">
-                            <h3 class="text-lg font-semibold text-[color:var(--brand-red)]">The InstaBloom Experience</h3>
+                            <h3 class="text-lg font-semibold text-[color:var(--brand-red)]">The InstaBloom Experience
+                            </h3>
                             <p class="text-sm text-gray-600 mt-1">Nuestro paquete más completo.</p>
                             <p class="text-sm font-semibold text-[color:var(--brand-red)] mt-3">Desde Q3,900</p>
                             <ul class="text-sm text-gray-600 mt-3 space-y-2">
@@ -205,7 +202,8 @@
                     </div>
 
                     <!-- The InstaBooth Experience -->
-                    <div class="rounded-lg p-6 bg-white shadow-lg hover:shadow-xl transition-shadow h-full border-2 border-gray-200">
+                    <div
+                        class="rounded-lg p-6 bg-white shadow-lg hover:shadow-xl transition-shadow h-full border-2 border-gray-200">
                         <h3 class="text-lg font-semibold text-[color:var(--brand-red)]">The InstaBooth Experience</h3>
                         <p class="text-sm text-gray-600 mt-1">Photobooth interactivo sin fondo.</p>
                         <p class="text-sm font-semibold text-[color:var(--brand-red)] mt-3">Desde Q2,800</p>
@@ -253,7 +251,8 @@
 
                     <details class="bg-white p-4 rounded shadow">
                         <summary class="font-medium">¿Cómo pago?</summary>
-                        <p class="mt-2 text-sm text-gray-600">Aceptamos transferencias, pagos con tarjeta y visacuotas sin recargo. Emitimos
+                        <p class="mt-2 text-sm text-gray-600">Aceptamos transferencias, pagos con tarjeta y visacuotas
+                            sin recargo. Emitimos
                             factura electrónica.</p>
                     </details>
                 </div>
@@ -281,11 +280,13 @@
                 <h2 class="text-2xl font-bold text-gray-800 mb-8">Síguenos en nuestras redes</h2>
                 <div class="flex flex-col items-center justify-center gap-8">
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/instabloom_gt" target="_blank" 
+                    <a href="https://www.instagram.com/instabloom_gt" target="_blank"
                         class="inline-flex flex-col items-center gap-3 hover:opacity-80 transition">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-red-500 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                        <div
+                            class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-red-500 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849 0 3.205-.012 3.584-.07 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 110-2.881 1.44 1.44 0 010 2.881z"/>
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849 0 3.205-.012 3.584-.07 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 110-2.881 1.44 1.44 0 010 2.881z" />
                             </svg>
                         </div>
                         <span class="text-sm font-semibold text-gray-800">@instabloom_gt</span>
@@ -293,9 +294,11 @@
                     <!-- TikTok -->
                     <a href="https://www.tiktok.com/@instabloom.gt" target="_blank"
                         class="inline-flex flex-col items-center gap-3 hover:opacity-80 transition">
-                        <div class="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                        <div
+                            class="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.68v13.67a2.4 2.4 0 11-2.4-2.4c.58 0 1.12.15 1.6.41V9.41a6.05 6.05 0 00-1.6-.22c-3.27 0-5.93 2.66-5.93 5.93s2.66 5.93 5.93 5.93c3.27 0 5.93-2.66 5.93-5.93V8.54a7.73 7.73 0 005.93 2.34v-3.69a4.83 4.83 0 01-3.77-1.5z"/>
+                                <path
+                                    d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.68v13.67a2.4 2.4 0 11-2.4-2.4c.58 0 1.12.15 1.6.41V9.41a6.05 6.05 0 00-1.6-.22c-3.27 0-5.93 2.66-5.93 5.93s2.66 5.93 5.93 5.93c3.27 0 5.93-2.66 5.93-5.93V8.54a7.73 7.73 0 005.93 2.34v-3.69a4.83 4.83 0 01-3.77-1.5z" />
                             </svg>
                         </div>
                         <span class="text-sm font-semibold text-gray-800">@instabloom.gt</span>
@@ -311,17 +314,22 @@
             <!-- Sobre InstaBloom -->
             <div>
                 <h4 class="font-semibold text-gray-800 mb-3">Sobre InstaBloom</h4>
-                <p class="text-sm text-gray-600">Creamos experiencias visuales premium para eventos memorables en Guatemala. Backdrops instagrameables y photobooths de calidad.</p>
+                <p class="text-sm text-gray-600">Creamos experiencias visuales premium para eventos memorables en
+                    Guatemala. Backdrops instagrameables y photobooths de calidad.</p>
             </div>
 
             <!-- Servicios -->
             <div>
                 <h4 class="font-semibold text-gray-800 mb-3">Servicios</h4>
                 <ul class="text-sm text-gray-600 space-y-2">
-                    <li><a href="#servicios" class="hover:text-[color:var(--brand-red)] transition">The Flower Wall Experience</a></li>
-                    <li><a href="#servicios" class="hover:text-[color:var(--brand-red)] transition">The InstaBooth Experience</a></li>
-                    <li><a href="#servicios" class="hover:text-[color:var(--brand-red)] transition">The InstaBloom Experience</a></li>
-                    <li><a href="#faq" class="hover:text-[color:var(--brand-red)] transition">Preguntas frecuentes</a></li>
+                    <li><a href="#servicios" class="hover:text-[color:var(--brand-red)] transition">The Flower Wall
+                            Experience</a></li>
+                    <li><a href="#servicios" class="hover:text-[color:var(--brand-red)] transition">The InstaBooth
+                            Experience</a></li>
+                    <li><a href="#servicios" class="hover:text-[color:var(--brand-red)] transition">The InstaBloom
+                            Experience</a></li>
+                    <li><a href="#faq" class="hover:text-[color:var(--brand-red)] transition">Preguntas frecuentes</a>
+                    </li>
                 </ul>
             </div>
 
@@ -329,16 +337,20 @@
             <div>
                 <h4 class="font-semibold text-gray-800 mb-3">Conecta con nosotros</h4>
                 <ul class="text-sm text-gray-600 space-y-2">
-                    <li><a href="https://www.instagram.com/instabloom_gt" target="_blank" class="hover:text-[color:var(--brand-red)] transition">Instagram @instabloom_gt</a></li>
-                    <li><a href="https://www.tiktok.com/@instabloom.gt" target="_blank" class="hover:text-[color:var(--brand-red)] transition">TikTok @instabloom.gt</a></li>
-                    <li><a href="mailto:info@instabloom.gt" class="hover:text-[color:var(--brand-red)] transition">info@instabloom.gt</a></li>
+                    <li><a href="https://www.instagram.com/instabloom_gt" target="_blank"
+                            class="hover:text-[color:var(--brand-red)] transition">Instagram @instabloom_gt</a></li>
+                    <li><a href="https://www.tiktok.com/@instabloom.gt" target="_blank"
+                            class="hover:text-[color:var(--brand-red)] transition">TikTok @instabloom.gt</a></li>
+                    <li><a href="mailto:info@instabloom.gt"
+                            class="hover:text-[color:var(--brand-red)] transition">info@instabloom.gt</a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Copyright -->
         <div class="border-t border-gray-100 mt-8 pt-6 pb-4 text-center">
-            <p class="text-xs text-gray-500">© <span id="year">2025</span> InstaBloom. Todos los derechos reservados.</p>
+            <p class="text-xs text-gray-500">© <span id="year">2025</span> InstaBloom. Todos los derechos reservados.
+            </p>
         </div>
     </footer>
 
