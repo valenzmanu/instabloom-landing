@@ -28,3 +28,33 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+@keyframes cta-glow {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.cta-glow::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 224, 178, 0.7);
+  box-shadow:
+    0 0 14px rgba(255, 224, 178, 0.45),
+    0 0 28px rgba(255, 224, 178, 0.3);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+  animation: cta-glow 3.8s ease-in-out infinite;
+}
+
+.cta-glow > * {
+  position: relative;
+  z-index: 1;
+}

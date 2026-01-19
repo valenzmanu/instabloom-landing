@@ -38,7 +38,7 @@ const blocks = [
     title: "El highlight de la celebración",
     image: "Imagen — Invitados interactuando con el estudio",
     imageSrc: `${import.meta.env.BASE_URL}images/guests-showoff.jpg`,
-    imageClassName: "object-[center_19%]",
+    imageClassName: "object-[center_10%]",
     bullets: [
       "Marco digital personalizado a la estética de tu boda",
       "Galería virtual para tus invitados",
@@ -141,6 +141,7 @@ const App = () => {
       Reservar
     </>
   );
+  const ctaButtonClass = "relative overflow-hidden cta-glow";
 
   return (
     <div className="min-h-screen bg-cream">
@@ -163,7 +164,9 @@ const App = () => {
               loading="lazy"
             />
           </div>
-          <Button href="#bloquear-fecha">{ctaContent}</Button>
+          <Button href="#bloquear-fecha" className={ctaButtonClass}>
+            {ctaContent}
+          </Button>
         </div>
       </header>
 
@@ -216,7 +219,9 @@ const App = () => {
                 ]}
               />
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button href="#bloquear-fecha">{ctaContent}</Button>
+                <Button href="#bloquear-fecha" className={ctaButtonClass}>
+                  {ctaContent}
+                </Button>
                 <Button
                   href="#el-problema"
                   className="border-espresso/40 bg-cream text-espresso hover:bg-cream/80"
@@ -467,7 +472,9 @@ const App = () => {
                 Si esta experiencia resuena contigo, probablemente eres
                 exactamente el tipo de anfitrión para el que fue creada.
               </p>
-              <Button href="#bloquear-fecha">{ctaContent}</Button>
+              <Button href="#bloquear-fecha" className={ctaButtonClass}>
+                {ctaContent}
+              </Button>
             </div>
             <ImagePlaceholder
               label="Imagen — Cierre editorial emocional"
@@ -630,7 +637,7 @@ const App = () => {
                 />
               </div>
               <div className="flex flex-col gap-4">
-                <Button type="submit" className="w-full">
+                <Button type="submit" className={`w-full ${ctaButtonClass}`}>
                   {ctaContent}
                 </Button>
                 {submitted && (
