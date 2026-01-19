@@ -2,6 +2,13 @@
 
 Landing page de InstaBloom (Guatemala) para bodas de alto nivel.
 
+## Tech stack
+
+- Vite
+- React
+- TypeScript
+- Tailwind CSS (PostCSS + Autoprefixer)
+
 ## Desarrollo
 
 - npm install
