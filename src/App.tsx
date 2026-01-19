@@ -38,7 +38,7 @@ const blocks = [
     title: "El highlight de la celebración",
     image: "Imagen — Invitados interactuando con el estudio",
     imageSrc: `${import.meta.env.BASE_URL}images/guests-showoff.jpg`,
-    imageClassName: "object-[center_20%]",
+    imageClassName: "object-[center_19%]",
     bullets: [
       "Marco digital personalizado a la estética de tu boda",
       "Galería virtual para tus invitados",
@@ -199,7 +199,11 @@ const App = () => {
 
         <Section id="el-problema" className="border-t border-espresso/10">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <ImagePlaceholder label="Imagen — Escena elegante de boda" className="reveal" />
+            <ImagePlaceholder
+              label="Imagen — Escena elegante de boda"
+              imageSrc={`${import.meta.env.BASE_URL}images/venue-image.jpg`}
+              className="reveal"
+            />
             <div className="space-y-6 reveal">
               <h2 className="font-serif text-3xl leading-tight md:text-5xl">
                 Cuando todo es impecable, un photobooth común simplemente no
