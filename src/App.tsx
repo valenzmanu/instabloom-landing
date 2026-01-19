@@ -9,6 +9,7 @@ const blocks = [
     number: "01",
     title: "Tecnología de estudio profesional",
     image: "Imagen — Equipo de cámara e iluminación",
+    imageSrc: `${import.meta.env.BASE_URL}images/guac-tech-showoff.png`,
     bullets: [
       "Cámara profesional DSLR",
       "Iluminación y flash de estudio calibrados para tu evento",
@@ -23,6 +24,7 @@ const blocks = [
     number: "02",
     title: "Escenario editorial de impacto",
     image: "Imagen — Flowerwall premium con invitados",
+    imageSrc: `${import.meta.env.BASE_URL}images/flowerwall-showoff.jpg`,
     bullets: [
       "Flowerwall premium blanco (2.40 × 2.40 m)",
       "Rótulo neón a elección",
@@ -35,6 +37,8 @@ const blocks = [
     number: "03",
     title: "El highlight de la celebración",
     image: "Imagen — Invitados interactuando con el estudio",
+    imageSrc: `${import.meta.env.BASE_URL}images/guests-showoff.jpg`,
+    imageClassName: "object-[center_20%]",
     bullets: [
       "Marco digital personalizado a la estética de tu boda",
       "Galería virtual para tus invitados",
@@ -47,6 +51,7 @@ const blocks = [
     number: "04",
     title: "Impresiones ilimitadas",
     image: "Imagen — Impresiones sobre fondo floral",
+    imageSrc: `${import.meta.env.BASE_URL}images/prints-closeup.png`,
     bullets: [
       "Ilimitadas durante el servicio",
       "Calidad que no se decolora con el tiempo",
@@ -110,24 +115,21 @@ const App = () => {
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-3 px-6 py-2 text-[11px] uppercase tracking-[0.35em] text-espresso/70 md:justify-between md:px-10">
             <span>Atención exclusiva: 1 evento por día</span>
             <span className="hidden h-1 w-1 rounded-full bg-champagne md:inline-block" />
-            <span>Bodas high-end en Guatemala</span>
+            <span>Bodas de alto nivel en Guatemala</span>
             <span className="hidden h-1 w-1 rounded-full bg-champagne md:inline-block" />
-            <span>Respuesta &lt; 24h</span>
+            <span>Respuesta en 24h</span>
           </div>
         </div>
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center">
             <img
               src={`${import.meta.env.BASE_URL}images/instabloom-logo.png`}
               alt="InstaBloom"
-              className="h-8 w-auto"
+              className="h-12 w-auto md:h-14"
               loading="lazy"
             />
-            <div className="hidden text-sm uppercase tracking-[0.4em] text-espresso/70 md:block">
-              InstaBloom
-            </div>
           </div>
-          <Button href="#bloquear-fecha">Bloquear fecha</Button>
+          <Button href="#bloquear-fecha">Solicitar disponibilidad</Button>
         </div>
       </header>
 
@@ -136,16 +138,17 @@ const App = () => {
           <div className="space-y-10">
             <div className="space-y-4 reveal">
               <p className="text-xs uppercase tracking-[0.4em] text-espresso/60">
-                Bodas high-end en Guatemala
+                Para parejas y wedding planners que curan cada detalle en Guatemala
               </p>
               <h1 className="font-serif text-4xl leading-tight text-espresso md:text-6xl">
-                No es un photobooth, es el highlight de tu fiesta.
+                No es un photobooth: es el estudio editorial que convierte tu boda en
+                un recuerdo de colección.
               </h1>
             </div>
             <div className="relative reveal">
               <ImagePlaceholder
                 label="Imagen Hero — Fotografía editorial B/N del Insta-Booth + impresiones"
-                imageSrc={`${import.meta.env.BASE_URL}images/hero-bw.png`}
+                imageSrc={`${import.meta.env.BASE_URL}images/service-showoff.jpg`}
                 className="aspect-[16/9] w-full rounded-[36px] border border-champagne/40 bg-espresso/80 text-cream/70 md:aspect-[21/9]"
               />
               <div
@@ -160,8 +163,9 @@ const App = () => {
             <div className="space-y-8 rounded-[28px] border border-espresso/15 bg-paper/85 p-8 shadow-soft backdrop-blur-md md:p-10 reveal">
               <div className="space-y-6">
                 <p className="text-lg text-espresso/80 md:text-xl">
-                  Prepárate para los cumplidos. Esta experiencia será el detalle
-                  del que todos tus invitados hablarán.
+                  Prepárate para los cumplidos. Tus invitados se llevan impresiones
+                  con calidad editorial y una experiencia VIP integrada a la
+                  estética del evento.
                 </p>
                 <p className="text-base uppercase tracking-[0.25em] text-espresso/60">
                   Diseñado para bodas que se recuerdan y se comentan.
@@ -174,11 +178,11 @@ const App = () => {
                 items={[
                   "Fotografía de estudio, no cabina",
                   "Impresiones que no se desvanecen con el tiempo",
-                  "Experiencia alineada a bodas high-end",
+                  "Experiencia alineada a bodas de alto nivel",
                 ]}
               />
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button href="#bloquear-fecha">Bloquear fecha</Button>
+                <Button href="#bloquear-fecha">Solicitar disponibilidad</Button>
                 <a
                   href="#el-problema"
                   className="text-sm uppercase tracking-[0.3em] text-espresso/70 transition hover:text-espresso"
@@ -241,19 +245,40 @@ const App = () => {
             </div>
             <ImagePlaceholder
               label="Imagen — Close-up de manos sosteniendo impresiones"
-              className="reveal"
+              imageSrc={`${import.meta.env.BASE_URL}images/prints-closeup.png`}
+              className="reveal min-h-[220px]"
             />
           </div>
         </Section>
 
         <Section className="border-t border-espresso/10">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <ImagePlaceholder
-              label="Imagen — Presentación protagonista del Insta-Booth"
-              className="reveal"
-            />
+            <div className="space-y-3 reveal lg:hidden">
+              <p className={badgeClass}>The Royal Studio</p>
+              <h2 className="font-serif text-3xl md:text-5xl">
+                Insta-Booth: The Royal Studio
+              </h2>
+            </div>
+            <div className="reveal overflow-hidden rounded-2xl border border-espresso/15 bg-rose/40">
+              <video
+                className="h-full w-full object-cover"
+                poster={`${import.meta.env.BASE_URL}images/hero-bw.png`}
+                preload="auto"
+                playsInline
+                muted
+                loop
+                autoPlay
+                aria-label="Presentación protagonista del Insta-Booth"
+              >
+                <source
+                  src={`${import.meta.env.BASE_URL}videos/booth-showoff-720p.mp4`}
+                  type="video/mp4"
+                />
+                Tu navegador no soporta video en HTML5.
+              </video>
+            </div>
             <div className="space-y-6 reveal">
-              <div className="space-y-3">
+              <div className="hidden space-y-3 lg:block">
                 <p className={badgeClass}>The Royal Studio</p>
                 <h2 className="font-serif text-3xl md:text-5xl">
                   Insta-Booth: The Royal Studio
@@ -262,7 +287,8 @@ const App = () => {
               {uspCopy}
               <div className="rounded-2xl border border-champagne/40 bg-paper px-6 py-6 text-lg font-semibold text-espresso shadow-soft">
                 InstaBloom monta estudios editoriales que producen fotografías
-                impresas de calidad de colección.
+                impresas de calidad de colección, con dirección de pose y
+                experiencia VIP.
               </div>
               <p className="text-lg text-espresso/80">
                 No es un servicio adicional. Es una decisión estética.
@@ -290,7 +316,12 @@ const App = () => {
                     </span>
                     <h3 className="font-serif text-2xl">{block.title}</h3>
                   </div>
-                  <ImagePlaceholder label={block.image} />
+                  <ImagePlaceholder
+                    label={block.image}
+                    imageSrc={block.imageSrc}
+                    imageClassName={block.imageClassName}
+                    className="aspect-[4/3]"
+                  />
                   <BulletList items={block.bullets} />
                   <p className="text-base text-espresso/80">{block.closing}</p>
                 </div>
@@ -300,11 +331,55 @@ const App = () => {
         </Section>
 
         <Section className="border-t border-espresso/10">
+          <div className="grid gap-12 lg:grid-cols-3">
+            <div className="space-y-4 reveal">
+              <p className={badgeClass}>Cómo funciona</p>
+              <h2 className="font-serif text-3xl md:text-5xl">
+                De la estética al recuerdo, sin fricciones.
+              </h2>
+              <p className="text-lg text-espresso/80">
+                Un proceso claro para que todo se vea impecable y fluya durante la
+                fiesta.
+              </p>
+            </div>
+            <div className="space-y-6 rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-champagne">
+                Paso 01
+              </p>
+              <h3 className="font-serif text-2xl">Cuidamos la estetica</h3>
+              <p className="text-base text-espresso/80">
+                Alineamos el set, la iluminación y el marco digital con el mood de
+                tu boda.
+              </p>
+            </div>
+            <div className="space-y-6 rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-champagne">
+                Paso 02
+              </p>
+              <h3 className="font-serif text-2xl">Dirección editorial</h3>
+              <p className="text-base text-espresso/80">
+                Hosts InstaBloom guían a tus invitados para lograr fotos con
+                presencia editorial.
+              </p>
+            </div>
+            <div className="space-y-6 rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft reveal">
+              <p className="text-xs uppercase tracking-[0.3em] text-champagne">
+                Paso 03
+              </p>
+              <h3 className="font-serif text-2xl">Impresión instantánea</h3>
+              <p className="text-base text-espresso/80">
+                Cada invitado se lleva impresiones al momento, con acabado premium.
+              </p>
+            </div>
+          </div>
+        </Section>
+
+        <Section className="border-t border-espresso/10">
           <div className="space-y-6 reveal">
             <h2 className="font-serif text-3xl md:text-5xl">Esto es para ti si:</h2>
             <BulletList
               items={[
-                "Estás organizando una boda high-end en Guatemala",
+                "Estás organizando una boda de alto nivel en Guatemala",
                 "Valoras la estética editorial y el diseño",
                 "Entiendes la fotografía impresa como un objeto de legado",
                 "Prefieres pocos proveedores, ejecutados a la perfección",
@@ -312,7 +387,7 @@ const App = () => {
             />
             <div className="border-t border-espresso/20 pt-6 text-lg text-espresso/80">
               No es para bodas donde el precio es el único criterio. Es para
-              anfitriones que cuidan cada decisión.
+              anfitriones que buscan recuerdos de colección.
             </div>
           </div>
         </Section>
@@ -321,6 +396,7 @@ const App = () => {
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <ImagePlaceholder
               label="Imagen — Detalle elegante del Insta-Booth B/N"
+              imageSrc={`${import.meta.env.BASE_URL}images/service-showoff.jpg`}
               className="reveal"
             />
             <div className="space-y-6 reveal">
@@ -353,9 +429,61 @@ const App = () => {
                 Si esta experiencia resuena contigo, probablemente eres
                 exactamente el tipo de anfitrión para el que fue creada.
               </p>
-              <Button href="#bloquear-fecha">Bloquear fecha</Button>
+              <Button href="#bloquear-fecha">Solicitar disponibilidad</Button>
             </div>
-            <ImagePlaceholder label="Imagen — Cierre editorial emocional" className="reveal" />
+            <ImagePlaceholder
+              label="Imagen — Cierre editorial emocional"
+              imageSrc={`${import.meta.env.BASE_URL}images/closing-image.jpg`}
+              className="reveal"
+            />
+          </div>
+        </Section>
+
+        <Section className="border-t border-espresso/10">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="space-y-6 reveal">
+              <h2 className="font-serif text-3xl md:text-5xl">Preguntas frecuentes</h2>
+              <p className="text-lg text-espresso/80">
+                Resolvemos las dudas típicas para que puedas decidir con claridad.
+              </p>
+            </div>
+            <div className="space-y-6 reveal">
+              <div className="rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft">
+                <h3 className="text-base font-semibold text-espresso">
+                  ¿Cuánto tiempo antes llegan y cuánto dura el montaje?
+                </h3>
+                <p className="mt-3 text-sm text-espresso/80">
+                  Llegamos con antelación para montar el set sin interrumpir la
+                  recepción; el montaje es discreto y eficiente.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft">
+                <h3 className="text-base font-semibold text-espresso">
+                  ¿Cuántas horas de servicio incluye?
+                </h3>
+                <p className="mt-3 text-sm text-espresso/80">
+                  El paquete base contempla el tiempo clave de la recepción. Si
+                  necesitas más horas, lo ajustamos.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft">
+                <h3 className="text-base font-semibold text-espresso">
+                  ¿Qué pasa si el evento es fuera de Antigua o Ciudad?
+                </h3>
+                <p className="mt-3 text-sm text-espresso/80">
+                  Cubrimos destinos en Guatemala; solo se agregan viáticos según la
+                  locación.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft">
+                <h3 className="text-base font-semibold text-espresso">
+                  ¿Pueden personalizar el marco y el set?
+                </h3>
+                <p className="mt-3 text-sm text-espresso/80">
+                  Sí, el marco digital y la estética se alinean con tu moodboard.
+                </p>
+              </div>
+            </div>
           </div>
         </Section>
 
@@ -364,7 +492,7 @@ const App = () => {
             <div className="space-y-6 reveal">
               <h2 className="font-serif text-3xl md:text-5xl">Bloquear fecha</h2>
               <p className="text-lg text-espresso/80">
-                Cuéntanos lo esencial y te respondemos con disponibilidad.
+                Cuéntanos lo esencial y te respondemos con disponibilidad en 24h.
               </p>
               <div className="rounded-2xl border border-espresso/10 bg-paper p-6 text-sm text-espresso/70">
                 <p className="text-xs uppercase tracking-[0.3em] text-champagne">

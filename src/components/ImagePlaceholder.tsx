@@ -2,18 +2,22 @@ const ImagePlaceholder = ({
   label,
   className = "",
   imageSrc,
+  imageClassName = "",
 }: {
   label: string;
   className?: string;
   imageSrc?: string;
+  imageClassName?: string;
 }) => {
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div
+      className={`relative overflow-hidden rounded-2xl border border-espresso/15 bg-rose/40 ${className}`}
+    >
       {imageSrc ? (
         <img
           src={imageSrc}
           alt={label}
-          className="h-full w-full object-cover"
+          className={`h-full w-full object-cover object-center ${imageClassName}`}
           loading="lazy"
         />
       ) : (
