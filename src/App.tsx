@@ -68,11 +68,8 @@ const App = () => {
   const [submitted, setSubmitted] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
   const [eventDate, setEventDate] = useState("");
-  const [venue, setVenue] = useState("");
-  const [role, setRole] = useState("");
-  const [message, setMessage] = useState("");
+  const [location, setLocation] = useState("");
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const lines = [
@@ -80,11 +77,8 @@ const App = () => {
       "",
       `Nombre: ${name || "-"}`,
       `Email: ${email || "-"}`,
-      `Telefono: ${phone || "-"}`,
       `Fecha del evento: ${eventDate || "-"}`,
-      `Venue: ${venue || "-"}`,
-      `Perfil: ${role || "-"}`,
-      message ? `Mensaje: ${message}` : null,
+      `Ubicación del venue: ${location || "-"}`,
     ].filter(Boolean);
     const encoded = encodeURIComponent(lines.join("\n"));
     window.open(`https://wa.me/50242911090?text=${encoded}`, "_blank");
@@ -485,7 +479,7 @@ const App = () => {
         </Section>
 
         <Section className="border-t border-espresso/10">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-10">
             <div className="space-y-6 reveal">
               <h2 className="font-serif text-3xl md:text-5xl">Preguntas frecuentes</h2>
               <p className="text-lg text-espresso/80">
@@ -533,7 +527,7 @@ const App = () => {
         </Section>
 
         <Section id="bloquear-fecha" className="border-t border-espresso/10">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="space-y-10">
             <div className="space-y-6 reveal">
               <h2 className="font-serif text-3xl md:text-5xl">Bloquear fecha</h2>
               <p className="text-lg text-espresso/80">
@@ -570,18 +564,6 @@ const App = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
-                  Teléfono
-                </label>
-                <input
-                  required
-                  type="tel"
-                  value={phone}
-                  onChange={(event) => setPhone(event.target.value)}
-                  className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
                   Fecha del evento
                 </label>
                 <input
@@ -594,47 +576,20 @@ const App = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
-                  Soy
+                  Ubicación del venue
                 </label>
                 <select
                   required
-                  value={role}
-                  onChange={(event) => setRole(event.target.value)}
+                  value={location}
+                  onChange={(event) => setLocation(event.target.value)}
                   className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
                 >
                   <option value="">Selecciona una opción</option>
-                  <option>Planner de bodas</option>
-                  <option>Novia</option>
-                  <option>Novio</option>
-                  <option>Pareja</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
-                  Venue (Ciudad de Guatemala / Antigua / Otro)
-                </label>
-                <select
-                  required
-                  value={venue}
-                  onChange={(event) => setVenue(event.target.value)}
-                  className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
-                >
-                  <option value="">Selecciona una opción</option>
-                  <option>Ciudad de Guatemala</option>
+                  <option>Guatemala City</option>
                   <option>Antigua</option>
+                  <option>Atitlán</option>
                   <option>Otro</option>
                 </select>
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
-                  Mensaje (opcional)
-                </label>
-                <textarea
-                  rows={4}
-                  value={message}
-                  onChange={(event) => setMessage(event.target.value)}
-                  className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
-                />
               </div>
               <div className="flex flex-col gap-4">
                 <Button type="submit" className={`w-full ${ctaButtonClass}`}>
