@@ -66,8 +66,28 @@ const badgeClass =
 
 const App = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [eventDate, setEventDate] = useState("");
+  const [venue, setVenue] = useState("");
+  const [role, setRole] = useState("");
+  const [message, setMessage] = useState("");
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const lines = [
+      "Hola InstaBloom, me gustaria bloquear fecha.",
+      "",
+      `Nombre: ${name || "-"}`,
+      `Email: ${email || "-"}`,
+      `Telefono: ${phone || "-"}`,
+      `Fecha del evento: ${eventDate || "-"}`,
+      `Venue: ${venue || "-"}`,
+      `Perfil: ${role || "-"}`,
+      message ? `Mensaje: ${message}` : null,
+    ].filter(Boolean);
+    const encoded = encodeURIComponent(lines.join("\n"));
+    window.open(`https://wa.me/50242911090?text=${encoded}`, "_blank");
     setSubmitted(true);
   };
 
@@ -108,6 +128,20 @@ const App = () => {
     []
   );
 
+  const ctaContent = (
+    <>
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill="currentColor"
+      >
+        <path d="M20.52 3.48A11.96 11.96 0 0 0 12.04 0C5.4 0 0 5.4 0 12.04c0 2.12.56 4.2 1.64 6.04L0 24l6.08-1.6a12.1 12.1 0 0 0 5.96 1.52h.01c6.64 0 12.04-5.4 12.04-12.04 0-3.21-1.25-6.22-3.57-8.4ZM12.05 21.5h-.01a9.96 9.96 0 0 1-5.08-1.4l-.37-.22-3.6.94.96-3.5-.24-.36A9.9 9.9 0 0 1 2.1 12.04C2.1 6.6 6.62 2.1 12.04 2.1c2.64 0 5.12 1.03 6.99 2.91a9.85 9.85 0 0 1 2.91 6.99c0 5.43-4.46 9.9-9.89 9.9Zm5.46-7.44c-.3-.16-1.78-.88-2.06-.98-.28-.1-.48-.16-.68.16-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.06-.3-.16-1.28-.48-2.44-1.52-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.14-.62.14-.14.3-.36.46-.54.16-.18.2-.3.3-.5.1-.2.04-.38-.02-.54-.06-.16-.68-1.64-.94-2.24-.24-.58-.5-.5-.68-.5h-.58c-.2 0-.54.08-.82.38-.28.3-1.08 1.06-1.08 2.58s1.1 2.98 1.26 3.18c.16.2 2.16 3.3 5.24 4.62.74.32 1.32.5 1.78.64.74.24 1.42.2 1.96.12.6-.1 1.78-.72 2.02-1.4.24-.7.24-1.3.18-1.4-.06-.12-.26-.2-.56-.36Z" />
+      </svg>
+      Reservar
+    </>
+  );
+
   return (
     <div className="min-h-screen bg-cream">
       <header className="sticky top-0 z-50 border-b border-espresso/10 bg-cream/90 backdrop-blur">
@@ -129,7 +163,7 @@ const App = () => {
               loading="lazy"
             />
           </div>
-          <Button href="#bloquear-fecha">Solicitar disponibilidad</Button>
+          <Button href="#bloquear-fecha">{ctaContent}</Button>
         </div>
       </header>
 
@@ -182,13 +216,13 @@ const App = () => {
                 ]}
               />
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button href="#bloquear-fecha">Solicitar disponibilidad</Button>
-                <a
+                <Button href="#bloquear-fecha">{ctaContent}</Button>
+                <Button
                   href="#el-problema"
-                  className="text-sm uppercase tracking-[0.3em] text-espresso/70 transition hover:text-espresso"
+                  className="border-espresso/40 bg-cream text-espresso hover:bg-cream/80"
                 >
                   Ver por qué es diferente
-                </a>
+                </Button>
               </div>
               <p className="text-xs uppercase tracking-[0.35em] text-espresso/60">
                 Respuesta en menos de 24 horas
@@ -433,7 +467,7 @@ const App = () => {
                 Si esta experiencia resuena contigo, probablemente eres
                 exactamente el tipo de anfitrión para el que fue creada.
               </p>
-              <Button href="#bloquear-fecha">Solicitar disponibilidad</Button>
+              <Button href="#bloquear-fecha">{ctaContent}</Button>
             </div>
             <ImagePlaceholder
               label="Imagen — Cierre editorial emocional"
@@ -498,12 +532,6 @@ const App = () => {
               <p className="text-lg text-espresso/80">
                 Cuéntanos lo esencial y te respondemos con disponibilidad en 24h.
               </p>
-              <div className="rounded-2xl border border-espresso/10 bg-paper p-6 text-sm text-espresso/70">
-                <p className="text-xs uppercase tracking-[0.3em] text-champagne">
-                  Bodas de alto nivel
-                </p>
-                <p className="mt-3">Guatemala</p>
-              </div>
             </div>
             <form
               onSubmit={handleSubmit}
@@ -516,16 +544,32 @@ const App = () => {
                 <input
                   required
                   type="text"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
                   className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
-                  WhatsApp
+                  Email
+                </label>
+                <input
+                  required
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
+                  Teléfono
                 </label>
                 <input
                   required
                   type="tel"
+                  value={phone}
+                  onChange={(event) => setPhone(event.target.value)}
                   className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
                 />
               </div>
@@ -536,8 +580,27 @@ const App = () => {
                 <input
                   required
                   type="date"
+                  value={eventDate}
+                  onChange={(event) => setEventDate(event.target.value)}
                   className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
                 />
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
+                  Soy
+                </label>
+                <select
+                  required
+                  value={role}
+                  onChange={(event) => setRole(event.target.value)}
+                  className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
+                >
+                  <option value="">Selecciona una opción</option>
+                  <option>Planner de bodas</option>
+                  <option>Novia</option>
+                  <option>Novio</option>
+                  <option>Pareja</option>
+                </select>
               </div>
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
@@ -545,6 +608,8 @@ const App = () => {
                 </label>
                 <select
                   required
+                  value={venue}
+                  onChange={(event) => setVenue(event.target.value)}
                   className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
                 >
                   <option value="">Selecciona una opción</option>
@@ -555,17 +620,18 @@ const App = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
-                  Mensaje
+                  Mensaje (opcional)
                 </label>
                 <textarea
-                  required
                   rows={4}
+                  value={message}
+                  onChange={(event) => setMessage(event.target.value)}
                   className="w-full rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-espresso focus:border-champagne focus:outline-none"
                 />
               </div>
               <div className="flex flex-col gap-4">
                 <Button type="submit" className="w-full">
-                  Solicitar disponibilidad
+                  {ctaContent}
                 </Button>
                 {submitted && (
                   <p className="text-sm text-champagne">
