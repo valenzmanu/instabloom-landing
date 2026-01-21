@@ -147,7 +147,7 @@ const App = () => {
       Reservar
     </>
   );
-  const ctaButtonClass = "relative overflow-hidden cta-glow";
+  const ctaButtonClass = "relative overflow-hidden cta-glow cta-sparkle";
 
   return (
     <div className="min-h-screen bg-cream">
