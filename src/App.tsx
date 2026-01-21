@@ -128,7 +128,7 @@ const App = () => {
       >
         <path d="M20.52 3.48A11.96 11.96 0 0 0 12.04 0C5.4 0 0 5.4 0 12.04c0 2.12.56 4.2 1.64 6.04L0 24l6.08-1.6a12.1 12.1 0 0 0 5.96 1.52h.01c6.64 0 12.04-5.4 12.04-12.04 0-3.21-1.25-6.22-3.57-8.4ZM12.05 21.5h-.01a9.96 9.96 0 0 1-5.08-1.4l-.37-.22-3.6.94.96-3.5-.24-.36A9.9 9.9 0 0 1 2.1 12.04C2.1 6.6 6.62 2.1 12.04 2.1c2.64 0 5.12 1.03 6.99 2.91a9.85 9.85 0 0 1 2.91 6.99c0 5.43-4.46 9.9-9.89 9.9Zm5.46-7.44c-.3-.16-1.78-.88-2.06-.98-.28-.1-.48-.16-.68.16-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.06-.3-.16-1.28-.48-2.44-1.52-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.14-.62.14-.14.3-.36.46-.54.16-.18.2-.3.3-.5.1-.2.04-.38-.02-.54-.06-.16-.68-1.64-.94-2.24-.24-.58-.5-.5-.68-.5h-.58c-.2 0-.54.08-.82.38-.28.3-1.08 1.06-1.08 2.58s1.1 2.98 1.26 3.18c.16.2 2.16 3.3 5.24 4.62.74.32 1.32.5 1.78.64.74.24 1.42.2 1.96.12.6-.1 1.78-.72 2.02-1.4.24-.7.24-1.3.18-1.4-.06-.12-.26-.2-.56-.36Z" />
       </svg>
-      Reservar
+      Asegurar mi fecha ahora
     </>
   );
   const ctaButtonClass = "relative overflow-hidden cta-glow cta-sparkle";
@@ -424,17 +424,17 @@ const App = () => {
           </div>
         </Section>
 
-        <Section id="inversion" className="border-t border-espresso/10">
-            <div className="space-y-6 reveal">
-              <h2 className="font-serif text-3xl md:text-5xl">Esto es para ti si:</h2>
-              <BulletList
-                items={[
-                  "Buscas un set que respete la estética de tu boda",
-                  "Quieres recuerdos impresos con calidad editorial",
-                  "Prefieres una experiencia cuidada y sin fricciones",
-                  "Valoras proveedores que ejecuten a la perfección",
-                ]}
-              />
+        <Section className="border-t border-espresso/10">
+          <div className="space-y-6 reveal">
+            <h2 className="font-serif text-3xl md:text-5xl">Esto es para ti si:</h2>
+            <BulletList
+              items={[
+                "Buscas un set que respete la estética de tu boda",
+                "Quieres recuerdos impresos con calidad editorial",
+                "Prefieres una experiencia cuidada y sin fricciones",
+                "Valoras proveedores que ejecuten a la perfección",
+              ]}
+            />
             <div className="border-t border-espresso/20 pt-6 text-lg text-espresso/80">
               No es para bodas donde el precio es el único criterio. Es para
               anfitriones que buscan recuerdos de colección.
@@ -442,7 +442,25 @@ const App = () => {
           </div>
         </Section>
 
-        <Section id="faq" className="border-t border-espresso/10">
+        <Section className="border-t border-espresso/10">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="space-y-6 reveal">
+              <p className={badgeClass}>Testimonios privados</p>
+              <h2 className="font-serif text-3xl md:text-5xl">
+                Mensajes que recibimos despues de la boda
+              </h2>
+              <p className="text-lg text-espresso/80">
+                Notas reales de parejas y planners al terminar la celebracion.
+              </p>
+              <Button href="#bloquear-fecha" className={ctaButtonClass}>
+                {ctaContent}
+              </Button>
+            </div>
+            <ImagePlaceholder label="Imagen — Testimonio en WhatsApp" className="reveal" />
+          </div>
+        </Section>
+
+        <Section id="inversion" className="border-t border-espresso/10">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <ImagePlaceholder
               label="Imagen — Detalle elegante del Insta-Booth B/N"
@@ -463,7 +481,7 @@ const App = () => {
                 <p>VisaCuotas hasta 12 meses</p>
               </div>
               <div className="rounded-2xl border border-champagne/40 bg-rose/40 px-6 py-4 text-base text-espresso">
-                Por exclusividad, ofrecemos atención personalizada de principio a
+                Ofrecemos atención personalizada de principio a
                 fin.
               </div>
               <Button href="#bloquear-fecha" className={ctaButtonClass}>
@@ -495,7 +513,7 @@ const App = () => {
           </div>
         </Section>
 
-        <Section className="border-t border-espresso/10">
+        <Section id="faq" className="border-t border-espresso/10">
           <div className="space-y-10">
             <div className="space-y-6 reveal">
               <h2 className="font-serif text-3xl md:text-5xl">Preguntas frecuentes</h2>
