@@ -168,8 +168,7 @@ const App = () => {
                 Para parejas y wedding planners que cuidan cada detalle en Guatemala
               </p>
               <h1 className="font-serif text-4xl leading-tight text-espresso md:text-6xl">
-                No es un photobooth: es el estudio editorial que convierte tu boda en
-                un recuerdo de colección.
+                Crea recuerdos que tus invitados presumirán por años. El Photo Booth más premium de Guatemala.
               </h1>
             </div>
             <div className="relative reveal">
@@ -223,19 +222,19 @@ const App = () => {
                 <div className="flex flex-wrap gap-2">
                   <Button
                     href="#royal-studio"
-                    className="border-espresso/20 bg-transparent text-espresso/70 hover:bg-cream/60 hover:text-espresso"
+                    className="border-espresso/30 bg-cream text-espresso/80 hover:bg-cream/80 hover:text-espresso"
                   >
                     Royal Studio
                   </Button>
                   <Button
                     href="#por-que"
-                    className="border-espresso/20 bg-transparent text-espresso/70 hover:bg-cream/60 hover:text-espresso"
+                    className="border-espresso/30 bg-cream text-espresso/80 hover:bg-cream/80 hover:text-espresso"
                   >
-                    Por qué es diferente
+                    Propuesta
                   </Button>
                   <Button
                     href="#inversion"
-                    className="border-espresso/20 bg-transparent text-espresso/70 hover:bg-cream/60 hover:text-espresso"
+                    className="border-espresso/30 bg-cream text-espresso/80 hover:bg-cream/80 hover:text-espresso"
                   >
                     Inversión
                   </Button>
@@ -262,7 +261,7 @@ const App = () => {
               </h2>
               <p className="text-lg text-espresso/80">
                 Has invertido tiempo, energía y presupuesto en un venue
-                extraordinario, en flores, música y diseño cuidadosamente curado.
+                extraordinario, en flores, música y diseño cuidadosamente curado. Los photobooths comunes:
               </p>
               <BulletList
                 items={[
