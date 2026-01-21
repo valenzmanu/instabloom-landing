@@ -10,8 +10,8 @@ const Section = ({
   className?: string;
 }) => {
   return (
-    <section id={id} className={`py-16 md:py-24 ${className}`}>
-      <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
+    <section id={id} className={`section-flow py-16 md:py-24 ${className}`}>
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 md:px-10">
         {children}
       </div>
     </section>

@@ -14,8 +14,75 @@ body {
   @apply bg-cream text-espresso font-sans antialiased;
 }
 
+.section-flow {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-flow::before,
+.section-flow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 72px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-flow::before {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(249, 242, 238, 0.9),
+    rgba(249, 242, 238, 0)
+  );
+}
+
+.section-flow::after {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(249, 242, 238, 0.9),
+    rgba(249, 242, 238, 0)
+  );
+}
+
 ::selection {
   background: rgba(201, 164, 122, 0.35);
+}
+
+.scroll-hint {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 164, 122, 0.35);
+  background: rgba(249, 242, 238, 0.85);
+  color: rgba(42, 30, 28, 0.65);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  box-shadow: 0 16px 36px rgba(42, 30, 28, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease;
+  z-index: 60;
+}
+
+.scroll-hint.is-visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint {
+    transition: none;
+  }
 }
 
 .reveal {
@@ -44,11 +111,12 @@ body {
   position: absolute;
   inset: -3px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 224, 178, 0.7);
+  border: 1px solid rgba(255, 224, 178, 0.85);
   box-shadow:
-    0 0 14px rgba(255, 224, 178, 0.45),
-    0 0 28px rgba(255, 224, 178, 0.3);
-  opacity: 0.25;
+    0 0 18px rgba(255, 224, 178, 0.55),
+    0 0 36px rgba(255, 224, 178, 0.35),
+    0 0 48px rgba(255, 209, 154, 0.25);
+  opacity: 0.45;
   pointer-events: none;
   z-index: 0;
   animation: cta-glow 3.8s ease-in-out infinite;
@@ -57,4 +125,13 @@ body {
 .cta-glow > * {
   position: relative;
   z-index: 1;
+}
+
+.cta-glow:hover::after,
+.cta-glow:focus-visible::after {
+  opacity: 0.7;
+  box-shadow:
+    0 0 22px rgba(255, 224, 178, 0.7),
+    0 0 44px rgba(255, 224, 178, 0.45),
+    0 0 60px rgba(255, 209, 154, 0.3);
 }

@@ -66,6 +66,7 @@ const badgeClass =
 
 const App = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [showScrollHint, setShowScrollHint] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [eventDate, setEventDate] = useState("");
@@ -106,6 +107,17 @@ const App = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 12) {
+        setShowScrollHint(false);
+        window.removeEventListener("scroll", onScroll);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const uspCopy = useMemo(
     () => (
       <div className="space-y-6 text-lg text-espresso/80 reveal">
@@ -142,7 +154,7 @@ const App = () => {
       <header className="sticky top-0 z-50 border-b border-espresso/10 bg-cream/90 backdrop-blur">
         <div className="border-b border-espresso/10 bg-rose/40">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-3 px-6 py-2 text-[11px] uppercase tracking-[0.35em] text-espresso/70 md:justify-between md:px-10">
-            <span>Atención exclusiva: 1 evento por día</span>
+            <span>Atención exclusiva</span>
             <span className="hidden h-1 w-1 rounded-full bg-champagne md:inline-block" />
             <span>Bodas de alto nivel en Guatemala</span>
             <span className="hidden h-1 w-1 rounded-full bg-champagne md:inline-block" />
@@ -165,11 +177,11 @@ const App = () => {
       </header>
 
       <main>
-        <Section>
+        <Section className="pt-10 pb-16 md:pt-16 md:pb-24">
           <div className="space-y-10">
             <div className="space-y-4 reveal">
               <p className="text-xs uppercase tracking-[0.4em] text-espresso/60">
-                Para parejas y wedding planners que curan cada detalle en Guatemala
+                Para parejas y wedding planners que cuidan cada detalle en Guatemala
               </p>
               <h1 className="font-serif text-4xl leading-tight text-espresso md:text-6xl">
                 No es un photobooth: es el estudio editorial que convierte tu boda en
@@ -202,7 +214,7 @@ const App = () => {
                   Diseñado para bodas que se recuerdan y se comentan.
                 </p>
                 <div className="inline-flex items-center rounded-full border border-champagne/50 bg-rose/40 px-4 py-2 text-xs uppercase tracking-[0.35em] text-espresso">
-                  Atención exclusiva: solo 1 evento por día
+                  Servicio VIP con atención personalizada
                 </div>
               </div>
               <BulletList
@@ -450,7 +462,8 @@ const App = () => {
                 <p>VisaCuotas hasta 12 meses</p>
               </div>
               <div className="rounded-2xl border border-champagne/40 bg-rose/40 px-6 py-4 text-base text-espresso">
-                Por exclusividad, atendemos solo 1 evento por día.
+                Por exclusividad, ofrecemos atención personalizada de principio a
+                fin.
               </div>
             </div>
           </div>
@@ -613,6 +626,21 @@ const App = () => {
           <span>Guatemala</span>
         </div>
       </footer>
+      <div
+        className={`scroll-hint ${showScrollHint ? "is-visible" : ""}`}
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
+          <path
+            d="M6 9l6 6 6-6"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <span>Desliza para descubrir</span>
+      </div>
     </div>
   );
 };
