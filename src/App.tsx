@@ -168,7 +168,8 @@ const App = () => {
                 Para parejas y wedding planners que cuidan cada detalle en Guatemala
               </p>
               <h1 className="font-serif text-4xl leading-tight text-espresso md:text-6xl">
-                Crea recuerdos que tus invitados presumirán por años. El Photo Booth más premium de Guatemala.
+                El estudio editorial que eleva tu boda y deja impresiones premium al
+                instante.
               </h1>
             </div>
             <div className="relative reveal">
@@ -189,11 +190,8 @@ const App = () => {
             <div className="space-y-8 rounded-[28px] border border-espresso/15 bg-paper/85 p-8 shadow-soft backdrop-blur-md md:p-10 reveal">
               <div className="space-y-6">
                 <p className="text-lg text-espresso/80 md:text-xl">
-                  Un estudio editorial integrado a tu boda que entrega impresiones
-                  premium al instante y eleva la experiencia de tus invitados.
-                </p>
-                <p className="text-base uppercase tracking-[0.25em] text-espresso/60">
-                  Diseñado para bodas que se recuerdan y se comentan.
+                  Un set editorial integrado a tu boda, con impresiones premium al
+                  instante.
                 </p>
                 <div className="inline-flex items-center rounded-full border border-champagne/50 bg-rose/40 px-4 py-2 text-xs uppercase tracking-[0.35em] text-espresso">
                   Servicio VIP con atención personalizada
@@ -201,9 +199,9 @@ const App = () => {
               </div>
               <BulletList
                 items={[
-                  "Dirección editorial para cada invitado",
+                  "Cámara e iluminación de estudio",
                   "Impresiones premium ilimitadas",
-                  "Set y branding alineados a tu estética",
+                  "Dirección editorial y set alineado",
                 ]}
               />
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -230,7 +228,7 @@ const App = () => {
                     href="#por-que"
                     className="border-espresso/30 bg-cream text-espresso/80 hover:bg-cream/80 hover:text-espresso"
                   >
-                    Propuesta
+                    Porqué es diferente
                   </Button>
                   <Button
                     href="#inversion"
@@ -276,6 +274,24 @@ const App = () => {
               <Button href="#bloquear-fecha" className={ctaButtonClass}>
                 {ctaContent}
               </Button>
+            </div>
+          </div>
+        </Section>
+
+        <Section className="border-t border-espresso/10">
+          <div className="space-y-6 reveal">
+            <h2 className="font-serif text-3xl md:text-5xl">Esto es para ti si:</h2>
+            <BulletList
+              items={[
+                "Buscas un set que respete la estética de tu boda",
+                "Quieres recuerdos impresos con calidad editorial",
+                "Prefieres una experiencia cuidada y sin fricciones",
+                "Valoras proveedores que ejecuten a la perfección",
+              ]}
+            />
+            <div className="border-t border-espresso/20 pt-6 text-lg text-espresso/80">
+              No es para bodas donde el precio es el único criterio. Es para
+              anfitriones que buscan recuerdos de colección.
             </div>
           </div>
         </Section>
@@ -375,6 +391,24 @@ const App = () => {
           </div>
         </Section>
 
+        <Section className="border-t border-espresso/10">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="space-y-6 reveal">
+              <p className={badgeClass}>Testimonios privados</p>
+              <h2 className="font-serif text-3xl md:text-5xl">
+                Mensajes que recibimos después de la boda
+              </h2>
+              <p className="text-lg text-espresso/80">
+                Notas reales de parejas y planners al terminar la celebración.
+              </p>
+              <Button href="#bloquear-fecha" className={ctaButtonClass}>
+                {ctaContent}
+              </Button>
+            </div>
+            <ImagePlaceholder label="Imagen — Testimonio en WhatsApp" className="reveal" />
+          </div>
+        </Section>
+
         <Section id="como-funciona" className="border-t border-espresso/10">
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="space-y-4 reveal">
@@ -421,42 +455,6 @@ const App = () => {
                 {ctaContent}
               </Button>
             </div>
-          </div>
-        </Section>
-
-        <Section className="border-t border-espresso/10">
-          <div className="space-y-6 reveal">
-            <h2 className="font-serif text-3xl md:text-5xl">Esto es para ti si:</h2>
-            <BulletList
-              items={[
-                "Buscas un set que respete la estética de tu boda",
-                "Quieres recuerdos impresos con calidad editorial",
-                "Prefieres una experiencia cuidada y sin fricciones",
-                "Valoras proveedores que ejecuten a la perfección",
-              ]}
-            />
-            <div className="border-t border-espresso/20 pt-6 text-lg text-espresso/80">
-              No es para bodas donde el precio es el único criterio. Es para
-              anfitriones que buscan recuerdos de colección.
-            </div>
-          </div>
-        </Section>
-
-        <Section className="border-t border-espresso/10">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="space-y-6 reveal">
-              <p className={badgeClass}>Testimonios privados</p>
-              <h2 className="font-serif text-3xl md:text-5xl">
-                Mensajes que recibimos despues de la boda
-              </h2>
-              <p className="text-lg text-espresso/80">
-                Notas reales de parejas y planners al terminar la celebracion.
-              </p>
-              <Button href="#bloquear-fecha" className={ctaButtonClass}>
-                {ctaContent}
-              </Button>
-            </div>
-            <ImagePlaceholder label="Imagen — Testimonio en WhatsApp" className="reveal" />
           </div>
         </Section>
 
