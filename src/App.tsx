@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Section from "./components/Section";
 import Button from "./components/Button";
 import ImagePlaceholder from "./components/ImagePlaceholder";
@@ -45,7 +45,7 @@ const blocks = [
       "Compartir inmediato por AirDrop",
       "Hosts InstaBloom cuidando el flujo y la experiencia",
     ],
-    closing: "Prepárate para los cumplidos.",
+    closing: "Una experiencia fluida, guiada y memorable.",
   },
   {
     number: "04",
@@ -117,22 +117,6 @@ const App = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const uspCopy = useMemo(
-    () => (
-      <div className="space-y-6 text-lg text-espresso/80 reveal">
-        <p>
-          Un estudio editorial diseñado para integrarse a la estética de tu boda y
-          elevarla.
-        </p>
-        <p>
-          Cada elemento —desde la iluminación hasta las impresiones— está pensado
-          para crear fotografías con presencia, elegancia y permanencia.
-        </p>
-      </div>
-    ),
-    []
-  );
 
   const ctaContent = (
     <>
@@ -206,9 +190,8 @@ const App = () => {
             <div className="space-y-8 rounded-[28px] border border-espresso/15 bg-paper/85 p-8 shadow-soft backdrop-blur-md md:p-10 reveal">
               <div className="space-y-6">
                 <p className="text-lg text-espresso/80 md:text-xl">
-                  Prepárate para los cumplidos. Tus invitados se llevan impresiones
-                  con calidad editorial y una experiencia VIP integrada a la
-                  estética del evento.
+                  Un estudio editorial integrado a tu boda que entrega impresiones
+                  premium al instante y eleva la experiencia de tus invitados.
                 </p>
                 <p className="text-base uppercase tracking-[0.25em] text-espresso/60">
                   Diseñado para bodas que se recuerdan y se comentan.
@@ -219,9 +202,9 @@ const App = () => {
               </div>
               <BulletList
                 items={[
-                  "Fotografía de estudio, no cabina",
-                  "Impresiones que no se desvanecen con el tiempo",
-                  "Experiencia alineada a bodas de alto nivel",
+                  "Dirección editorial para cada invitado",
+                  "Impresiones premium ilimitadas",
+                  "Set y branding alineados a tu estética",
                 ]}
               />
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -232,8 +215,31 @@ const App = () => {
                   href="#el-problema"
                   className="border-espresso/40 bg-cream text-espresso hover:bg-cream/80"
                 >
-                  Ver por qué es diferente
+                  Ver la propuesta
                 </Button>
+              </div>
+              <div className="space-y-2 text-xs uppercase tracking-[0.3em] text-espresso/60">
+                <p>Explora</p>
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    href="#royal-studio"
+                    className="border-espresso/20 bg-transparent text-espresso/70 hover:bg-cream/60 hover:text-espresso"
+                  >
+                    Royal Studio
+                  </Button>
+                  <Button
+                    href="#por-que"
+                    className="border-espresso/20 bg-transparent text-espresso/70 hover:bg-cream/60 hover:text-espresso"
+                  >
+                    Por qué es diferente
+                  </Button>
+                  <Button
+                    href="#inversion"
+                    className="border-espresso/20 bg-transparent text-espresso/70 hover:bg-cream/60 hover:text-espresso"
+                  >
+                    Inversión
+                  </Button>
+                </div>
               </div>
               <p className="text-xs uppercase tracking-[0.35em] text-espresso/60">
                 Respuesta en menos de 24 horas
@@ -268,39 +274,14 @@ const App = () => {
               <p className="text-lg text-espresso/80">
                 Para una boda de alto nivel, eso no es suficiente.
               </p>
+              <Button href="#bloquear-fecha" className={ctaButtonClass}>
+                {ctaContent}
+              </Button>
             </div>
           </div>
         </Section>
 
-        <Section className="border-t border-espresso/10">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-6 reveal">
-              <h2 className="font-serif text-3xl leading-tight md:text-5xl">
-                <span className="block">
-                  Tu boda no necesita más entretenimiento.
-                </span>
-                <span className="block">
-                  Necesita un recuerdo tangible que trascienda el evento.
-                </span>
-              </h2>
-              <p className="text-lg text-espresso/80">
-                Las fotografías impresas viven más allá del día de la boda.
-                Permanecen en álbumes, en hogares y en conversaciones futuras.
-              </p>
-              <div className="space-y-3 text-lg font-semibold text-espresso">
-                <p>Por eso en InstaBloom no instalamos cabinas.</p>
-                <p>Creamos recuerdos físicos con intención y legado.</p>
-              </div>
-            </div>
-            <ImagePlaceholder
-              label="Imagen — Close-up de manos sosteniendo impresiones"
-              imageSrc={`${import.meta.env.BASE_URL}images/prints-closeup.png`}
-              className="reveal min-h-[220px]"
-            />
-          </div>
-        </Section>
-
-        <Section className="border-t border-espresso/10">
+        <Section id="royal-studio" className="border-t border-espresso/10">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="space-y-3 reveal lg:hidden">
               <p className={badgeClass}>The Royal Studio</p>
@@ -333,20 +314,31 @@ const App = () => {
                   Insta-Booth: The Royal Studio
                 </h2>
               </div>
-              {uspCopy}
+              <div className="space-y-4 text-lg text-espresso/80">
+                <p>
+                  Un set editorial diseñado para integrarse al mood de tu boda y
+                  mantener una estética impecable.
+                </p>
+                <p>
+                  Guía de poses, atención cuidada y fotografías con carácter de
+                  publicación.
+                </p>
+              </div>
               <div className="rounded-2xl border border-champagne/40 bg-paper px-6 py-6 text-lg font-semibold text-espresso shadow-soft">
-                InstaBloom monta estudios editoriales que producen fotografías
-                impresas de calidad de colección, con dirección de pose y
+                Fotografías impresas con calidad de colección, dirección de pose y
                 experiencia VIP.
               </div>
               <p className="text-lg text-espresso/80">
                 No es un servicio adicional. Es una decisión estética.
               </p>
+              <Button href="#bloquear-fecha" className={ctaButtonClass}>
+                {ctaContent}
+              </Button>
             </div>
           </div>
         </Section>
 
-        <Section className="border-t border-espresso/10">
+        <Section id="por-que" className="border-t border-espresso/10">
           <div className="space-y-10">
             <h2 className="font-serif text-3xl md:text-5xl reveal">
               Por qué es diferente
@@ -376,10 +368,15 @@ const App = () => {
                 </div>
               ))}
             </div>
+            <div className="reveal">
+              <Button href="#bloquear-fecha" className={ctaButtonClass}>
+                {ctaContent}
+              </Button>
+            </div>
           </div>
         </Section>
 
-        <Section className="border-t border-espresso/10">
+        <Section id="como-funciona" className="border-t border-espresso/10">
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="space-y-4 reveal">
               <p className={badgeClass}>Cómo funciona</p>
@@ -420,20 +417,25 @@ const App = () => {
                 Cada invitado se lleva impresiones al momento, con acabado premium.
               </p>
             </div>
+            <div className="reveal lg:col-span-3">
+              <Button href="#bloquear-fecha" className={ctaButtonClass}>
+                {ctaContent}
+              </Button>
+            </div>
           </div>
         </Section>
 
-        <Section className="border-t border-espresso/10">
-          <div className="space-y-6 reveal">
-            <h2 className="font-serif text-3xl md:text-5xl">Esto es para ti si:</h2>
-            <BulletList
-              items={[
-                "Estás organizando una boda de alto nivel en Guatemala",
-                "Valoras la estética editorial y el diseño",
-                "Entiendes la fotografía impresa como un objeto de legado",
-                "Prefieres pocos proveedores, ejecutados a la perfección",
-              ]}
-            />
+        <Section id="inversion" className="border-t border-espresso/10">
+            <div className="space-y-6 reveal">
+              <h2 className="font-serif text-3xl md:text-5xl">Esto es para ti si:</h2>
+              <BulletList
+                items={[
+                  "Buscas un set que respete la estética de tu boda",
+                  "Quieres recuerdos impresos con calidad editorial",
+                  "Prefieres una experiencia cuidada y sin fricciones",
+                  "Valoras proveedores que ejecuten a la perfección",
+                ]}
+              />
             <div className="border-t border-espresso/20 pt-6 text-lg text-espresso/80">
               No es para bodas donde el precio es el único criterio. Es para
               anfitriones que buscan recuerdos de colección.
@@ -441,7 +443,7 @@ const App = () => {
           </div>
         </Section>
 
-        <Section className="border-t border-espresso/10">
+        <Section id="faq" className="border-t border-espresso/10">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <ImagePlaceholder
               label="Imagen — Detalle elegante del Insta-Booth B/N"
@@ -465,6 +467,9 @@ const App = () => {
                 Por exclusividad, ofrecemos atención personalizada de principio a
                 fin.
               </div>
+              <Button href="#bloquear-fecha" className={ctaButtonClass}>
+                {ctaContent}
+              </Button>
             </div>
           </div>
         </Section>
@@ -535,6 +540,11 @@ const App = () => {
                   Sí, el marco digital y la estética se alinean con tu moodboard.
                 </p>
               </div>
+            </div>
+            <div className="reveal">
+              <Button href="#bloquear-fecha" className={ctaButtonClass}>
+                {ctaContent}
+              </Button>
             </div>
           </div>
         </Section>
