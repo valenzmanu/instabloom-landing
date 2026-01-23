@@ -14,6 +14,10 @@ body {
   @apply bg-cream text-espresso font-sans antialiased;
 }
 
+input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+}
+
 .section-flow {
   position: relative;
   isolation: isolate;
