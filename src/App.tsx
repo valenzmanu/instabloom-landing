@@ -334,8 +334,8 @@ const App = () => {
       </header>
 
       <main>
-        <Section className="pt-10 pb-16 md:pt-16 md:pb-24">
-          <div className="space-y-10">
+        <Section className="pt-8 pb-12 md:pt-12 md:pb-20">
+          <div className="space-y-8">
             <div className="space-y-4 reveal">
               <p className="text-xs uppercase tracking-[0.4em] text-espresso/60">
                 Para parejas y wedding planners que cuidan cada detalle en Guatemala
@@ -359,8 +359,8 @@ const App = () => {
                 className="pointer-events-none absolute right-10 top-20 hidden h-3 w-3 rounded-full bg-champagne/60 md:block"
               />
             </div>
-            <div className="space-y-8 rounded-[28px] border border-espresso/15 bg-paper/85 p-8 shadow-soft backdrop-blur-md md:p-10 reveal">
-              <div className="space-y-6">
+            <div className="space-y-6 rounded-[28px] border border-espresso/15 bg-paper/85 p-6 shadow-soft backdrop-blur-md md:p-8 reveal">
+              <div className="space-y-5">
                 <p className="text-lg text-espresso/80 md:text-xl">
                   Un set editorial integrado a tu boda, con fotos impresas premium al
                   instante.
@@ -389,12 +389,12 @@ const App = () => {
                   "Impresiones premium ilimitadas",
                   "Dirección editorial y set alineado",
                 ]}
-	              />
-	              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-	                <Button
-	                  href="#el-problema"
-	                  className="border-espresso/40 bg-cream text-espresso hover:bg-cream/80"
-	                >
+              />
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Button
+                  href="#el-problema"
+                  className="border-espresso/40 bg-cream text-espresso hover:bg-cream/80"
+                >
                   Ver la propuesta
                 </Button>
               </div>
@@ -429,13 +429,13 @@ const App = () => {
         </Section>
 
         <Section id="el-problema" className="border-t border-espresso/10">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <ImagePlaceholder
               label="Imagen — Escena elegante de boda"
               imageSrc={`${import.meta.env.BASE_URL}images/venue-image.jpg`}
               className="reveal"
             />
-            <div className="space-y-6 reveal">
+            <div className="space-y-5 reveal">
               <h2 className="font-serif text-3xl leading-tight md:text-5xl">
                 Cuando todo es impecable, un photobooth común simplemente no
                 encaja.
@@ -451,15 +451,15 @@ const App = () => {
                   "Entregan recuerdos que terminan olvidados",
                 ]}
               />
-	              <p className="text-lg text-espresso/80">
-	                Para una boda de alto nivel, eso no es suficiente.
-	              </p>
-	            </div>
-	          </div>
-	        </Section>
+              <p className="text-lg text-espresso/80">
+                Para una boda de alto nivel, eso no es suficiente.
+              </p>
+            </div>
+          </div>
+        </Section>
 
         <Section id="royal-studio" className="border-t border-espresso/10">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="space-y-3 reveal lg:hidden">
               <p className={badgeClass}>The Royal Studio</p>
               <h2 className="font-serif text-3xl md:text-5xl">
@@ -484,7 +484,7 @@ const App = () => {
                 Tu navegador no soporta video en HTML5.
               </video>
             </div>
-            <div className="space-y-6 reveal">
+            <div className="space-y-5 reveal">
               <div className="hidden space-y-3 lg:block">
                 <p className={badgeClass}>The Royal Studio</p>
                 <h2 className="font-serif text-3xl md:text-5xl">
@@ -505,20 +505,20 @@ const App = () => {
                 Fotografías impresas con calidad de colección, dirección de pose y
                 experiencia VIP.
               </div>
-	              <p className="text-lg text-espresso/80">
-	                No es un servicio adicional. Es una decisión estética.
-	              </p>
-	            </div>
-	          </div>
-	        </Section>
+              <p className="text-lg text-espresso/80">
+                No es un servicio adicional. Es una decisión estética.
+              </p>
+            </div>
+          </div>
+        </Section>
 
         <Section id="por-que" className="border-t border-espresso/10">
-          <div className="space-y-10">
+          <div className="space-y-8">
             <h2 className="font-serif text-3xl md:text-5xl reveal">
               Por qué es diferente
             </h2>
             <div
-              className="space-y-6 reveal"
+              className="space-y-5 reveal"
               role="region"
               aria-roledescription="carousel"
               aria-label="Por qué es diferente"
@@ -703,27 +703,30 @@ const App = () => {
                   {String(whyDifferentTotal).padStart(2, "0")}
                 </span>
               </div>
-	            </div>
-	          </div>
-	        </Section>
+            </div>
+          </div>
+        </Section>
 
         <Section className="border-t border-espresso/10">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="space-y-6 reveal">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="space-y-5 reveal">
               <p className={badgeClass}>Testimonios privados</p>
               <h2 className="font-serif text-3xl md:text-5xl">
                 Mensajes que recibimos después de la boda
               </h2>
-	              <p className="text-lg text-espresso/80">
-	                Notas reales de parejas y planners al terminar la celebración.
-	              </p>
-	            </div>
-	            <ImagePlaceholder label="Imagen — Testimonio en WhatsApp" className="reveal" />
-	          </div>
-	        </Section>
+              <p className="text-lg text-espresso/80">
+                Notas reales de parejas y planners al terminar la celebración.
+              </p>
+            </div>
+            <ImagePlaceholder
+              label="Imagen — Testimonio en WhatsApp"
+              className="reveal"
+            />
+          </div>
+        </Section>
 
         <Section id="como-funciona" className="border-t border-espresso/10">
-          <div className="space-y-10">
+          <div className="space-y-8">
             <div className="space-y-4 reveal">
               <p className={badgeClass}>Cómo funciona</p>
               <h2 className="font-serif text-3xl md:text-5xl">
@@ -735,7 +738,7 @@ const App = () => {
               </p>
             </div>
             <div
-              className="space-y-6 reveal"
+              className="space-y-5 reveal"
               role="region"
               aria-roledescription="carousel"
               aria-label="Cómo funciona"
@@ -898,13 +901,13 @@ const App = () => {
         </Section>
 
         <Section id="inversion" className="border-t border-espresso/10">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <ImagePlaceholder
               label="Imagen — Detalle elegante del Insta-Booth B/N"
               imageSrc={`${import.meta.env.BASE_URL}images/service-showoff.jpg`}
               className="reveal"
             />
-            <div className="space-y-6 reveal">
+            <div className="space-y-5 reveal">
               <h2 className="font-serif text-3xl md:text-5xl">Inversión</h2>
               <p className="font-serif text-5xl text-espresso md:text-6xl">Q7,800</p>
               <div className="space-y-2 text-base text-espresso/80">
@@ -917,43 +920,42 @@ const App = () => {
                 <p>Tarjetas de débito y crédito</p>
                 <p>VisaCuotas hasta 12 meses</p>
               </div>
-	              <div className="rounded-2xl border border-champagne/40 bg-rose/40 px-6 py-4 text-base text-espresso">
-	                Ofrecemos atención personalizada de principio a
-	                fin.
-	              </div>
-	            </div>
-	          </div>
-	        </Section>
+              <div className="rounded-2xl border border-champagne/40 bg-rose/40 px-6 py-4 text-base text-espresso">
+                Ofrecemos atención personalizada de principio a fin.
+              </div>
+            </div>
+          </div>
+        </Section>
 
         <Section className="border-t border-espresso/10">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-6 reveal">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="space-y-5 reveal">
               <h2 className="font-serif text-3xl md:text-5xl">
                 Las fechas se asignan por orden de confirmación.
               </h2>
-	              <p className="text-lg text-espresso/80">
-	                Si esta experiencia resuena contigo, probablemente eres
-	                exactamente el tipo de anfitrión para el que fue creada.
-	              </p>
-	            </div>
-	            <ImagePlaceholder
-	              label="Imagen — Cierre editorial emocional"
-	              imageSrc={`${import.meta.env.BASE_URL}images/closing-image.jpg`}
+              <p className="text-lg text-espresso/80">
+                Si esta experiencia resuena contigo, probablemente eres
+                exactamente el tipo de anfitrión para el que fue creada.
+              </p>
+            </div>
+            <ImagePlaceholder
+              label="Imagen — Cierre editorial emocional"
+              imageSrc={`${import.meta.env.BASE_URL}images/closing-image.jpg`}
               className="reveal"
             />
           </div>
         </Section>
 
         <Section id="faq" className="border-t border-espresso/10">
-          <div className="space-y-10">
-            <div className="space-y-6 reveal">
+          <div className="space-y-8">
+            <div className="space-y-5 reveal">
               <h2 className="font-serif text-3xl md:text-5xl">Preguntas frecuentes</h2>
               <p className="text-lg text-espresso/80">
                 Resolvemos las dudas típicas para que puedas decidir con claridad.
               </p>
             </div>
-            <div className="space-y-6 reveal">
-              <div className="rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft">
+            <div className="space-y-5 reveal">
+              <div className="rounded-2xl border border-espresso/10 bg-paper p-5 shadow-soft md:p-6">
                 <h3 className="text-base font-semibold text-espresso">
                   ¿Cuánto tiempo antes llegan y cuánto dura el montaje?
                 </h3>
@@ -962,7 +964,7 @@ const App = () => {
                   recepción; el montaje es discreto y eficiente.
                 </p>
               </div>
-              <div className="rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft">
+              <div className="rounded-2xl border border-espresso/10 bg-paper p-5 shadow-soft md:p-6">
                 <h3 className="text-base font-semibold text-espresso">
                   ¿Cuántas horas de servicio incluye?
                 </h3>
@@ -971,7 +973,7 @@ const App = () => {
                   necesitas más horas, lo ajustamos.
                 </p>
               </div>
-              <div className="rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft">
+              <div className="rounded-2xl border border-espresso/10 bg-paper p-5 shadow-soft md:p-6">
                 <h3 className="text-base font-semibold text-espresso">
                   ¿Qué pasa si el evento es fuera de Antigua o Ciudad?
                 </h3>
@@ -980,21 +982,21 @@ const App = () => {
                   locación.
                 </p>
               </div>
-	              <div className="rounded-2xl border border-espresso/10 bg-paper p-6 shadow-soft">
-	                <h3 className="text-base font-semibold text-espresso">
-	                  ¿Pueden personalizar el marco y el set?
-	                </h3>
+              <div className="rounded-2xl border border-espresso/10 bg-paper p-5 shadow-soft md:p-6">
+                <h3 className="text-base font-semibold text-espresso">
+                  ¿Pueden personalizar el marco y el set?
+                </h3>
                 <p className="mt-3 text-sm text-espresso/80">
                   Sí, el marco digital y la estética se alinean con tu moodboard.
                 </p>
-	              </div>
-	            </div>
-	          </div>
-	        </Section>
+              </div>
+            </div>
+          </div>
+        </Section>
 
         <Section id="bloquear-fecha" className="border-t border-espresso/10">
-          <div className="space-y-10">
-            <div className="space-y-6 reveal">
+          <div className="space-y-8">
+            <div className="space-y-5 reveal">
               <h2 className="font-serif text-3xl md:text-5xl">Asegurar mi fecha</h2>
               <p className="text-lg text-espresso/80">
                 Cuéntanos lo esencial y te respondemos con disponibilidad en 24h.
@@ -1002,7 +1004,7 @@ const App = () => {
             </div>
             <form
               onSubmit={handleSubmit}
-              className="space-y-5 rounded-2xl border border-espresso/10 bg-paper p-6 reveal"
+              className="space-y-4 rounded-2xl border border-espresso/10 bg-paper p-5 reveal md:p-6"
             >
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-[0.3em] text-espresso/60">
@@ -1040,13 +1042,13 @@ const App = () => {
                   className="block w-full min-w-0 max-w-full appearance-none rounded-xl border border-espresso/20 bg-cream px-4 py-3 text-left text-espresso focus:border-champagne focus:outline-none"
                 />
               </div>
-	              <div className="flex flex-col gap-4">
-	                <Button type="submit" className="w-full">
-	                  Enviar
-	                </Button>
-	                {submitted && (
-	                  <p className="text-sm text-champagne">
-	                    Gracias — te responderemos pronto.
+              <div className="flex flex-col gap-4">
+                <Button type="submit" className="w-full">
+                  Enviar
+                </Button>
+                {submitted && (
+                  <p className="text-sm text-champagne">
+                    Gracias — te responderemos pronto.
                   </p>
                 )}
               </div>
